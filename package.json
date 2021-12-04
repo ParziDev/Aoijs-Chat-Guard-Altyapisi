@@ -1,0 +1,18 @@
+{
+  "name": "-asdf",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tokyo.js",
+  "scripts": {
+    "start": "node tokyo.js"
+  },
+  "engines": {
+    "node": "12.x"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aoi.js": "^3.0.0",
+    "yt-search": "^2.8.0"
+  }
+}
