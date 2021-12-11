@@ -13,7 +13,7 @@ $onlyIf[$getServerVar[raidengel]==true;⚠️ Raid engel zaten kapatılmış]
 $endif
 $if[$message[1]==sayı]
 $channelSendMessage[$channelID;{description:⚙️ Raid sayısı **$message[2]** olarak ayarlandı}{color:$getServerVar[hex]}{delete:5s}]
-$setServerVar[raidsayı;message[2]]
+$setServerVar[raidsayı;$message[2]]
 $onlyIf[$isNumber[$message[2]]==true;⚠️ Bir sayı gir]
 $onlyIf[$message[2]!=;⚠️ Bir sayı gir]
 $onlyIf[$getServerVar[raidengel]==true;⚠️ İlk önce raid engeli açmaya ne dersiniz?]
