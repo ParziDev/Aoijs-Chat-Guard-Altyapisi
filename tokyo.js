@@ -41,6 +41,7 @@ bot.command({
   name:"$alwaysExecute",
   code:`
   $channelSendMessage[$channelID;{description:❌ Link atmaya çalışma <@$authorID>}{color:$getServerVar[hex]}{delete:7s}]
+  $deleteCommand
   $onlyIf[$checkContains[$toLowercase[$message];https://;http://;discord.gg/;.gg/;gg/;.com;.xyz;.net;.tk]==true;]
   $onlyIf[$hasPerms[$authorID;admin]!=true;]
   $onlyIf[$getServerVar[linkengel]==true;]
@@ -51,6 +52,7 @@ bot.updateCommand({
   channel:"$channelID",
   code:`
   $channelSendMessage[$channelID;{description:❌ Link atmaya çalışma <@$authorID>}{color:$getServerVar[hex]}{delete:7s}]
+  $deleteCommand
   $onlyIf[$checkContains[$toLowercase[$message];https://;http://;discord.gg/;.gg/;gg/;.com;.xyz;.net;.tk]==true;]
   $onlyIf[$hasPerms[$authorID;admin]!=true;]
   $onlyIf[$getServerVar[linkengel]==true;]
@@ -65,6 +67,7 @@ bot.command({
   name:"$alwaysExecute",
   code:`
   $channelSendMessage[$channelID;{description:❌ Küfür etmeye çalışma <@$authorID>}{color:$getServerVar[hex]}{delete:7s}]
+  $deleteCommand
   $onlyIf[$checkContains[$toLowercase[$message];oç;amk;aq;sg;piç;ananı sikiyim;ananıskm;siktir]==true;]
   $onlyIf[$hasPerms[$authorID;admin]!=true;]
   $onlyIf[$getServerVar[küfürengel]==true;]
@@ -75,6 +78,7 @@ bot.updateCommand({
   channel:"$channelID",
   code:`
   $channelSendMessage[$channelID;{description:❌ Link atmaya çalışma <@$authorID>}{color:$getServerVar[hex]}{delete:7s}]
+  $deleteCommand
   $onlyIf[$checkContains[$toLowercase[$message];oç;amk;aq;sg;piç;ananı sikiyim;ananıskm;siktir]==true;]
   $onlyIf[$hasPerms[$authorID;admin]!=true;]
   $onlyIf[$getServerVar[küfürengel]==true;]
@@ -98,6 +102,7 @@ bot.command({
   code:`
   $setServerVar[spamsayı;0;$authorID]
   $channelSendMessage[$channelID;{description:❌ Spam atmaya çalışma <@$authorID>}{color:$getServerVar[hex]}{delete:7s}]
+  $clear[4;$authorID]
   $onlyIf[$getServerVar[spamsayı;$authorID]==5;]
   $onlyIf[$message==$getServerVar[spammesaj;$authorID];]
   $onlyIf[$getServerVar[spamengel]==true;]
